@@ -1,0 +1,187 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+nav{
+    padding: 1%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    box-shadow:2px 3px 3px 2px rgba(0,0,0,0.2);
+}
+nav .logo{
+    word-spacing: 10px;
+    letter-spacing: 5px;
+}
+nav .option{
+    color: black;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+nav .option a{
+    text-decoration: none;
+}
+.img{
+    background-image: url("image1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 1% 0 1%;
+    width: 98%;
+    height: 40em;
+}
+.img p{
+    font-size: x-large;
+    font-weight: bolder;
+    position: absolute;
+    color: white;
+    top: 50%;           
+    left: 50%;          
+    transform: translate(-50%, -50%);
+    margin: 0;
+    letter-spacing: 7px;
+}
+p #lg{
+    opacity: 50%;
+    margin: 10px;
+    padding: 8px;
+    background-color: black;
+}
+.container{
+    width: 100vw;
+    padding: 5px;
+    margin: 30px 10px 30px;
+    /* display: inline-grid; */
+}
+.container .head {
+    font-size:large;
+    margin: 0 0 30px 0;
+}
+.project{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 1rem;
+}
+.container .project .box{
+    position: relative;
+}
+.container .project .box img{
+    width: 100%;
+}
+.container .project .box p{
+    padding: 5px;
+    font-size: large;
+    color: white;
+    background-color: black;
+    position: absolute;
+    top: 0;
+}
+.about{
+    margin: 50px 30px 0 30px;
+    padding: 15px;
+    display: inline-grid;
+}
+.about .head h{
+    font-size: large;
+}
+.about .head p{
+    margin: 20px 0;
+    font-size: medium;
+}
+.people{
+    margin: 30px 0 30px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 1rem;
+}
+.about .people .box h{
+    font-size:large;
+}
+.about .people .box img{
+    width: 100%;
+    fill-opacity: 60%;
+    margin: 0 0 10px 0;
+}
+.about .people .box p{
+    margin: 15px 0;
+}
+.about .people .box button{
+    border: none;
+    width: 100%;
+    font-size: 20px;
+    padding: 5px;
+}
+form{
+    margin: 50px 30px 0 30px;
+}
+.break{
+    margin:15px 0;
+}
+form input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+form h{
+    font-size: x-large;
+}
+form p{
+    margin: 10px 0 0 0;
+}
+footer{
+    margin: 30px;
+}
+.foot{
+    background-image: url("https://www.w3schools.com/w3images/map.jpg");
+    height: 40em;
+    margin:0 30px 0 30px;
+}
+footer{
+    margin:10px 0 0 0;
+    background-color: black;
+    width: 100%;
+    padding: 30px;
+}
+footer p{
+    color:white;
+    text-align: center;
+    padding: 10px;
+}
+@media screen and (max-width: 600px){
+    .img p{
+        display: absolute;
+        top: 26%;
+        font-size: 3em;
+    }
+    .img p #lk{
+        display: none;
+    }
+    .project{
+        display: block;
+        /* grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit,minmax(300,1fr));
+        gap: 1rem;  */
+    }
+    nav .option{
+        display: none;
+    }
+    .img{
+        background-image: url("image1.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0 1% 0 1%;
+        width: 98%;
+        height: 25em;
+    }
+    footer{
+        margin:10px 0 0 0;
+        background-color: black;        padding: 30px;
+    }
+}
