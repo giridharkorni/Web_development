@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="login">
+            <div class="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd9NIbWAbK6Kxqe-jIJxHws46AEYXn5rTcNw&s" alt="">
+            </div>
+            <input type="text" id="email" placeholder="Phone number, username, or email"/>
+            <input type="password" id="pass" placeholder="password"/>
+            <input type="submit" id="log" value="Log in">
+            <div class="line"><hr/></div>
+            <a href="#" class="logi"><i class="fa-brands fa-facebook"></i>   Log in with Facebook</a>
+            <a href="">Forgot password?</a>
+        </div>
+        <div class="new_acc">
+            <p>Don't have an account?<a href="">Sign up</a></p>
+        </div>
+        <div class="getapp">
+            <h>Get the app.</h>
+            <div class="play">
+                <img id="1" src="https://static.cdninstagram.com/rsrc.php/v4/yz/r/c5Rp7Ym-Klz.png" alt="">
+                <img id="2" src="https://static.cdninstagram.com/rsrc.php/v4/yu/r/EHY6QnZYdNX.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/3745197fcb.js" crossorigin="anonymous">
+        function emailvalidation(){
+            var email = document.getElementById('email').value;
+            var pass = document.getElementById('pass').value;
+            if(email == ""){
+                alert('Please enter email');
+                return false;
+            }
+            else if(pass == ""){
+                alert('Please enter password');
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
