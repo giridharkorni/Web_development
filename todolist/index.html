@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="todo">
+        <h1>Todo List <span id="plus">+</span></h1>
+        <input id="tag" type="text" placeholder="Add New Todo"/>
+        <input id="add" type="submit" value="Add">
+        <input id="clear" type="submit" value="Clear All">
+        <div id="taskList"></div>
+    </div>
+
+    <script>
+        let addBtn = document.getElementById("add");
+        let taskInput = document.getElementById("tag");
+        let clearBtn = document.getElementById("clear");
+        let taskList = document.getElementById("taskList");
+
+        function addTask() {
+            if (taskInput.value.trim() === "") {
+                alert("Please enter a valid task!");
+                return;
+            }
+
+            let taskContainer = document.createElement("div");
+            taskContainer.className = "taskContainer";
+
+            let taskHeader = document.createElement("div");
+            taskHeader.className = "taskHeader";
+
+            let checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.addEventListener("change", function () {
+                if (checkbox.checked) {
+                    taskContainer.classList.add("completed");
+                } else {
+                    taskContainer.classList.remove("completed");
+                }
+            });
+
+            let taskText = document.createElement("div");
+            taskText.className = "output-Box";
+            taskText.textContent = taskInput.value;
+
+            let deleteBtn = document.createElement("button");
+            let editbtn=document.createElement("button");
+            editbtn.textContent="Edit";
+            editbtn.className="edit-btn";
+            deleteBtn.textContent = "Delete";
+            deleteBtn.className = "delete-btn";
+
+            editbtn.addEventListener("click",function(){
+                let newText=prompt("Enter new text",taskText.textContent);
+                if(newText.trim()!==""){
+                    taskText.textContent=newText;
+                }
+            }); 
+
+            deleteBtn.addEventListener("click", function () {
+                taskList.removeChild(taskContainer);
+            });
+
+            taskHeader.appendChild(checkbox);
+            taskContainer.appendChild(taskHeader);
+            taskContainer.appendChild(taskText);
+            taskContainer.appendChild(editbtn);
+            taskContainer.appendChild(deleteBtn);
+            taskList.appendChild(taskContainer);
+            taskInput.value = "";
+        }
+
+        clearBtn.addEventListener("click", function () {
+            taskList.innerHTML = "";
+        });
+
+        addBtn.addEventListener("click", addTask);
+
+        taskInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+                addTask();
+            }
+        });
+    </script>
+
+</body>
+</html>
